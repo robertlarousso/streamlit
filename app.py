@@ -1,6 +1,6 @@
 import streamlit as st
 
-with st as form("my_form"):
+with st.form("my_form"):
     st.write("My Form")
     name = st.text_input("Your name ?")
 
