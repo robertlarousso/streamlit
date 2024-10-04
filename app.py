@@ -33,4 +33,4 @@ if prompt := st.chat_input("What is up?"):
     myobj = {'message': prompt}
     rep = requests.post(server_url + '/chat_bot', params = myobj)
 
-    add_bot_mess(f"Echo: {response.json().result}")
+    add_bot_mess(f"Echo: {rep.json().result}")
