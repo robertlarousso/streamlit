@@ -1,4 +1,7 @@
 import streamlit as st
+import requests
+
+server_url = "aa83-35-186-182-93.ngrok-free.app"
 
 def add_bot_mess(mess):
     response = f"{mess}"
@@ -27,4 +30,7 @@ if prompt := st.chat_input("What is up?"):
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
 
-    add_bot_mess(f"Echo: {prompt}")
+    myobj = {'message': mess}
+    rep = requests.post(server_url, json = myobj)
+
+    add_bot_mess(f"Echo: {response.json().result}")
