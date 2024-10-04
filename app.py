@@ -31,6 +31,6 @@ if prompt := st.chat_input("What is up?"):
     st.session_state.messages.append({"role": "user", "content": prompt})
 
     myobj = {'message': prompt}
-    rep = requests.post(server_url, json = myobj)
+    rep = requests.post(server_url, param = myobj)
 
     add_bot_mess(f"Echo: {response.json().result}")
