@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-server_url = "https://f4a3-35-186-182-93.ngrok-free.app"
+server_url = st.sidebare.text_input('URL')
 
 def add_bot_mess(mess):
     response = f"{mess}"
