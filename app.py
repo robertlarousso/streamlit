@@ -15,7 +15,7 @@ def add_bot_mess(mess):
 # Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
-    add_bot_mess("Comment puis-je vous aider ?")
+    #add_bot_mess("Comment puis-je vous aider ?")
     
 
 # Display chat messages from history on app rerun
@@ -24,7 +24,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # React to user input
-if prompt := st.chat_input("What is up?"):
+if prompt := st.chat_input("Inscrivez votre message"):
     # Display user message in chat message container
     with st.chat_message("user"):
         st.markdown(prompt)
@@ -35,4 +35,4 @@ if prompt := st.chat_input("What is up?"):
     rep = requests.post(server_url + '/chat_bot', params = myobj)
     rep_rob = rep.json()["result"]
 
-    add_bot_mess(f"Echo: {rep_rob}")
+    add_bot_mess(f"{rep_rob}")
