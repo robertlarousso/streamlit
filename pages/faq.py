@@ -7,10 +7,10 @@ faq = []
 
 rep = requests.get(st.session_state["server_url"] + "/chat_bot_histo")
 for m in  rep.json():
-    print(str(m))
+    faq.append({"role": "user", "content":  m.prompt_user})
+    faq.append({"role": "assistant", "content": m.response_gpt})
 
-faq.append({"role": "assistant", "content": "Première question de la FAQ ??"})
-faq.append({"role": "user", "content": "Réponse à la première question de la FAQ"})
+
 
 # Display chat messages from history on app rerun
 for message in faq:
