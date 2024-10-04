@@ -5,6 +5,9 @@ st.title("FAQ")
 # Initialize chat history
 faq = []
 
+if st.button("Reset"):
+    rep = requests.get(st.session_state["server_url"] + "/reset")
+
 rep = requests.get(st.session_state["server_url"] + "/chat_bot_histo")
 for m in  rep.json():
     faq.append({"role": "user", "content":  m[2]})
