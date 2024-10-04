@@ -7,8 +7,8 @@ faq = []
 
 rep = requests.get(st.session_state["server_url"] + "/chat_bot_histo")
 for m in  rep.json():
-    faq.append({"role": "user", "content":  m.prompt_user})
-    faq.append({"role": "assistant", "content": m.response_gpt})
+    faq.append({"role": "user", "content":  m[2]})
+    faq.append({"role": "assistant", "content": m[3]})
 
 
 
