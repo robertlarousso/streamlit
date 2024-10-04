@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-server_url = "aa83-35-186-182-93.ngrok-free.app"
+server_url = "f4a3-35-186-182-93.ngrok-free.app"
 
 def add_bot_mess(mess):
     response = f"{mess}"
@@ -31,6 +31,6 @@ if prompt := st.chat_input("What is up?"):
     st.session_state.messages.append({"role": "user", "content": prompt})
 
     myobj = {'message': prompt}
-    rep = requests.post(server_url, params = myobj)
+    rep = requests.post(server_url + '/chat_bot', params = myobj)
 
     add_bot_mess(f"Echo: {response.json().result}")
