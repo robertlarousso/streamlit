@@ -6,7 +6,7 @@ st.title("FAQ")
 faq = []
 
 if st.button("Reset"):
-    rep = requests.get(st.session_state["server_url"] + "/reset")
+    rep = requests.post(st.session_state["server_url"] + "/reset")
 
 rep = requests.get(st.session_state["server_url"] + "/chat_bot_histo")
 for m in  rep.json():
