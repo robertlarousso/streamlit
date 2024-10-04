@@ -1,7 +1,8 @@
 import streamlit as st
 import requests
 
-server_url = st.sidebare.text_input('URL')
+st.session_state["server_url"] = "https://" + st.sidebare.text_input('URL')
+server_url = st.session_state["server_url"]
 
 def add_bot_mess(mess):
     response = f"{mess}"
