@@ -30,7 +30,7 @@ if prompt := st.chat_input("What is up?"):
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
 
-    myobj = {'message': mess}
+    myobj = {'message': prompt}
     rep = requests.post(server_url, json = myobj)
 
     add_bot_mess(f"Echo: {response.json().result}")
