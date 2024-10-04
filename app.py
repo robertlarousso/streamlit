@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-st.session_state["server_url"] = "https://"  + "07f3-35-186-182-93.ngrok-free.app"
+st.session_state["server_url"] = "https://"  + "ee3f-35-186-182-93.ngrok-free.app"
 server_url = st.session_state["server_url"]
 
 def add_bot_mess(mess):
